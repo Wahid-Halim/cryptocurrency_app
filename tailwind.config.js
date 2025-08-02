@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
+      jetBrains: ["JetBrains Mono", "monospace"],
     },
     extend: {},
   },

@@ -1,5 +1,11 @@
+import GlobalStats from "../features/homepage/GlobalStats";
+
 const Home = () => {
-  return <div className="bg-red-500 w-full h-full text-slate-950">Home</div>;
+  return (
+    <div className="bg-white w-full h-full max-container pt-8 px-6">
+      <GlobalStats />
+    </div>
+  );
 };
 
 export default Home;

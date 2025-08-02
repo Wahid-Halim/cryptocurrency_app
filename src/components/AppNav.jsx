@@ -12,8 +12,8 @@ const AppNav = () => {
       className="max-w-[300px] h-[100vh]
      bg-violet-700 pt-4 px-6 text-white"
     >
-      <h1 className="flex items-center mt-4 mb-10 text-center text-2xl font-semibold gap-x-2 justify-center  ">
-        <PiCurrencyEth />
+      <h1 className="flex items-center mt-4 mb-10 text-center text-2xl font-semibold gap-x-2 justify-center font-roboto tracking-wider">
+        <PiCurrencyEth className="text-4xl" />
         CoinNest
       </h1>
       <nav>
