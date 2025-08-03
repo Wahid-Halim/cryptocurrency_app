@@ -1,9 +1,10 @@
-import React from 'react'
-
+import CurrenciesList from "../features/homepage/CurrenciesList";
 const CryptoCurrencies = () => {
   return (
-    <div>CryptoCurrencies</div>
-  )
-}
+    <section className=" w-full h-full max-container pt-8 px-6">
+      <CurrenciesList simplified={false} />
+    </section>
+  );
+};
 
-export default CryptoCurrencies
+export default CryptoCurrencies;

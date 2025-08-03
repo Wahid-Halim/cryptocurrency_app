@@ -8,11 +8,11 @@ const options = {
   },
 };
 
-export const getCoins = async () => {
-  const res = await fetch(`${BASE_URL}/coins`, options);
+export const getCoins = async (count = 10) => {
+  const res = await fetch(`${BASE_URL}/coins?limit=${count}`, options);
 
   if (!res.ok) throw new Error("Failed to fetch coins");
-    const data = await res.json();
-    
+  const data = await res.json();
+
   return data?.data;
 };

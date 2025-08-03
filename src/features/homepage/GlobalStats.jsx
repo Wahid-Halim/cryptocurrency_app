@@ -12,7 +12,7 @@ const GlobalStats = () => {
     totalExchanges,
     totalMarketCap,
     totalMarkets,
-  } = data.stats || {};
+  } = data?.stats || {};
 
   if (isPending) return <p>Loading.....</p>;
 
@@ -55,6 +55,10 @@ const GlobalStats = () => {
             <span className="font-bold text-[18px]">
               {millify(totalMarkets)}
             </span>
+          </li>
+          <li className="flex flex-col font-jetBrains">
+            <span className="text-gray-500 text-sm">Total Coins</span>
+            <span className="font-bold text-[18px]">{millify(totalCoins)}</span>
           </li>
         </ul>
       </div>
