@@ -1,7 +1,6 @@
 import millify from "millify";
 
-import useCoins from "./useCoins";
-import { Exchange } from "../../pages";
+import { useCoins } from "../hooks/useCoins";
 
 const GlobalStats = () => {
   const { data, isPending } = useCoins();

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import useCoins from "./useCoins";
+
+import { useCoins } from "../hooks/useCoins";
 import CurrencyItem from "./CurrencyItem";
-import Search from "../../components/Search";
+import Search from "./Search";
 
 const CurrenciesList = ({ simplified }) => {
-    const count = simplified ? 10 : 100;
-    
+  const count = simplified ? 10 : 100;
+
   const { data, isPending } = useCoins(count);
   const [searchTerm, setSearchTerm] = useState("");
 

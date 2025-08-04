@@ -1,7 +1,10 @@
-import React from "react";
-
+import NewsList from "../components/NewsList";
 const News = () => {
-  return <div>News</div>;
+  return (
+    <section className="bg-slate-100 w-full h-full max-container pt-8 px-6">
+      <NewsList />
+    </section>
+  );
 };
 
 export default News;

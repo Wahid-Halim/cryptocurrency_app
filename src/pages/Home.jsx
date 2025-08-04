@@ -1,13 +1,20 @@
-import GlobalStats from "../features/homepage/GlobalStats";
-import TopCurrencies from "../features/homepage/TopCurrencies";
-import News from "./News";
+import GlobalStats from "../components/GlobalStats";
+import TopCurrencies from "../components/TopCurrencies";
+import NewsList from "../components/NewsList";
+import SubHeader from "../components/SubHeader";
 
 const Home = () => {
   return (
     <div className="bg-slate-100 w-full h-full max-container pt-8 px-6 ">
       <GlobalStats />
+      <SubHeader
+        to="//cryptocurrencie"
+        headerText="Top 10 Cryptos in The World"
+      />
       <TopCurrencies />
-      <News />
+
+      <SubHeader to="/news" headerText="Latest Crypto News" />
+      <NewsList simplified={true} />
     </div>
   );
 };

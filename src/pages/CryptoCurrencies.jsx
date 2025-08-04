@@ -1,4 +1,4 @@
-import CurrenciesList from "../features/homepage/CurrenciesList";
+import CurrenciesList from "../components/CurrenciesList";
 const CryptoCurrencies = () => {
   return (
     <section className=" w-full h-full max-container pt-8 px-6">

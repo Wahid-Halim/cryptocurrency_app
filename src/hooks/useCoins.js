@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { getCoins } from "../../services/cryptoApi";
+import {getCoins} from "../services/cryptoApi";
 
-const useCoins = (count) => {
+export const useCoins = (count) => {
   const { data, isPending } = useQuery({
     queryFn: () => getCoins(count),
     queryKey: ["coins"],
@@ -10,5 +9,3 @@ const useCoins = (count) => {
 
   return { data, isPending };
 };
-
-export default useCoins;
