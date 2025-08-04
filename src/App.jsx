@@ -1,4 +1,4 @@
-import { Home, CryptoCurrencies, Exchange, News } from "./pages/index";
+import { Home, CryptoCurrencies, News } from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import { Navigate } from "react-router-dom";

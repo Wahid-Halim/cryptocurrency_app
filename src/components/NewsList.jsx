@@ -2,13 +2,14 @@ import NewsItem from "./NewsItem";
 import Select from "./Select";
 import { useState } from "react";
 import useCryptoNews from "../hooks/useCryptoNews";
+import Loader from "./Loader";
 
 const NewsList = ({ simplified }) => {
   const { data, isPending } = useCryptoNews(simplified);
 
   const [selectedCrypto, setSelectedCrypto] = useState("all");
 
-  if (isPending) return <p>Loading...</p>;
+  if (isPending) return <Loader />;
 
   const allNews = data || [];
 
@@ -33,7 +34,7 @@ const NewsList = ({ simplified }) => {
         />
       )}
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 max-[1278px]:grid-cols-2  max-laptop1:grid-cols-1">
         {filteredNews.map((news, index) => (
           <NewsItem news={news} key={index} />
         ))}

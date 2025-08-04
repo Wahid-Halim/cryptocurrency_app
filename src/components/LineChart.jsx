@@ -52,10 +52,10 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 
   return (
     <>
-      <h3>{coinName} Price Chart</h3>
+      <h3 className="font-jetBrains">{coinName} Price Chart</h3>
       <div>
-        <h4>{coinHistory?.data?.change}%</h4>
-        <h4>
+        <h4 className="font-jetBrains">{coinHistory?.data?.change}%</h4>
+        <h4 className="font-jetBrains mb-4">
           Current {coinName} Price: ${currentPrice}
         </h4>
       </div>

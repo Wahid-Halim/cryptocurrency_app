@@ -13,6 +13,7 @@ import { CiTrophy } from "react-icons/ci";
 import { LuChartLine } from "react-icons/lu";
 import { IoStopCircleOutline } from "react-icons/io5";
 import useCryptoHistory from "../hooks/useCryptoHistory.js";
+import Loader from "./Loader.jsx";
 
 const CryptoDetails = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const CryptoDetails = () => {
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
-  if (isPending || isPending2) return <p>Loading....</p>;
+  if (isPending || isPending2) return <Loader />
 
   const cryptoDetails = data?.data.coin;
 
@@ -98,7 +99,7 @@ const CryptoDetails = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div className="">
       <h1 className="text-violet-700 font-bold text-2xl text-center">
         {cryptoDetails?.name} ({cryptoDetails?.symbol}) Price
       </h1>
@@ -117,7 +118,7 @@ const CryptoDetails = () => {
         <select
           value={timePeriod}
           onChange={(e) => setTimePeriod(e.target.value)}
-          className="border bg-slate-50 border-gray-200 py-1 px-3 rounded-sm text-base font-semibold"
+          className="border bg-slate-50 border-gray-200 py-1 pr-20 rounded-sm text-base font-semibold font-jetBrains"
         >
           {time.map((item) => (
             <option key={item} value={item}>
@@ -134,7 +135,7 @@ const CryptoDetails = () => {
       />
 
       {/* Statistics Section */}
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-6 mt-8 font-jetBrains">
+      <div className="grid grid-cols-2 max-tabletLg:grid-cols-1 gap-6 mt-8 font-jetBrains">
         <div>
           <h2 className="text-lg font-semibold text-gray-800 mb-3">
             {cryptoDetails.name} Value Statistic

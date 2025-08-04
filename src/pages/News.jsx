@@ -1,7 +1,7 @@
 import NewsList from "../components/NewsList";
 const News = () => {
   return (
-    <section className="bg-slate-100 w-full h-full max-container pt-8 px-6">
+    <section className="page-container max-container max-md:px-2 max-md:py-4">
       <NewsList />
     </section>
   );

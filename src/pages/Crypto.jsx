@@ -2,7 +2,7 @@ import CryptoDetails from "../components/CryptoDetails";
 
 const Crypto = () => {
   return (
-    <section className="w-full h-full max-container pt-8 px-6 ">
+    <section className="page-container max-container max-md:px-2 max-md:py-4">
       <CryptoDetails />
     </section>
   );

@@ -1,6 +1,7 @@
 import millify from "millify";
 
 import { useCoins } from "../hooks/useCoins";
+import Loader from "./Loader";
 
 const GlobalStats = () => {
   const { data, isPending } = useCoins();
@@ -13,13 +14,13 @@ const GlobalStats = () => {
     totalMarkets,
   } = data?.stats || {};
 
-  if (isPending) return <p>Loading.....</p>;
+  if (isPending) return <Loader />;
 
   return (
     <div>
       <h1 className=" text-2xl mb-6 font-medium">Global Crypto Stats</h1>
       <div className="">
-        <ul className="grid grid-cols-2">
+        <ul className="grid grid-cols-2 max-tabletSm:grid-cols-1 gap-y-4">
           <li className="flex flex-col font-jetBrains">
             <span className="text-gray-500 text-sm">
               Total Cryptocurrencies

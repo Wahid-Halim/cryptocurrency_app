@@ -1,9 +1,10 @@
 import Select from "react-select";
 import { useCoins } from "../hooks/useCoins";
+import Loader from "./Loader";
 
 const CustomSelect = ({ selectedCrypto, setSelectedCrypto }) => {
   const { data, isPending } = useCoins(100);
-  if (isPending) return <p>Loading...</p>;
+  if (isPending) return <Loader />;
 
   const coins = data.coins;
 

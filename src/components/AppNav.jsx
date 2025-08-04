@@ -1,22 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
+import { VscChromeClose } from "react-icons/vsc";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 import { FaHome } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa";
 import { BsCurrencyExchange } from "react-icons/bs";
 import { FaNewspaper } from "react-icons/fa";
 import { PiCurrencyEth } from "react-icons/pi";
+import { useState } from "react";
 
 const AppNav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenNav = () => {
+    setIsOpen((open) => !open);
+  };
   return (
-    <aside
-      className="max-w-[300px] h-[100vh]
-     bg-violet-700 pt-4 px-6 text-white"
-    >
-      <h1 className="flex items-center mt-4 mb-10 text-center text-2xl font-semibold gap-x-2 justify-center font-roboto tracking-wider">
-        <PiCurrencyEth className="text-4xl" />
-        CoinNest
-      </h1>
-      <nav>
+    <aside className="w-[300px] h-[100vh] bg-violet-700 pt-4 px-6 text-white max-laptop1:px-2 max-laptop1:w-[200px] max-mobileLg:w-full max-mobileLg:h-fit ">
+      <div className="flex justify-between items-center mb-5">
+        <h1 className="flex items-center   text-center text-2xl font-semibold gap-x-2 justify-center font-roboto tracking-wider">
+          <PiCurrencyEth className="text-4xl" />
+          CoinNest
+        </h1>
+        <span onClick={handleOpenNav}>
+          {isOpen ? (
+            <RxHamburgerMenu className="mobileLg:hidden text-2xl " />
+          ) : (
+            <VscChromeClose className="mobileLg:hidden text-2xl " />
+          )}
+        </span>
+      </div>
+      <nav className={`${!isOpen ? "max-mobileLg:hidden" : ""}`}>
         <ul className="space-y-6">
           <li className="">
             <NavLink
@@ -39,17 +53,7 @@ const AppNav = () => {
               Cryptocurrencies
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="exchange"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "bg-violet-600" : ""}`
-              }
-            >
-              <BsCurrencyExchange />
-              Exchange
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="news"

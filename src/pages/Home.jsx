@@ -5,10 +5,10 @@ import SubHeader from "../components/SubHeader";
 
 const Home = () => {
   return (
-    <div className="bg-slate-100 w-full h-full max-container pt-8 px-6 ">
+    <div className="page-container max-container max-md:px-2 max-md:py-4">
       <GlobalStats />
       <SubHeader
-        to="//cryptocurrencie"
+        to="/cryptocurrencie"
         headerText="Top 10 Cryptos in The World"
       />
       <TopCurrencies />

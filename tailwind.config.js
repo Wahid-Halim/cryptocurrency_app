@@ -6,6 +6,12 @@ export default {
       roboto: ["Roboto", "sans-serif"],
       jetBrains: ["JetBrains Mono", "monospace"],
     },
+    screens: {
+      tabletLg: "920px",
+      tabletSm: "660px",
+      laptop1: "1110px",
+      mobileLg: "600px",
+    },
     extend: {},
   },
   plugins: [],
