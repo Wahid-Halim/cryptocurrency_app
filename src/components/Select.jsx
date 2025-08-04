@@ -1,19 +1,44 @@
+import Select from "react-select";
 import { useCoins } from "../hooks/useCoins";
 
-const Select = ({ selectedCrypto, setSelectedCrypto }) => {
-  const { data, isPending } = useCoins();
+const CustomSelect = ({ selectedCrypto, setSelectedCrypto }) => {
+  const { data, isPending } = useCoins(100);
+  if (isPending) return <p>Loading...</p>;
+
   const coins = data.coins;
+
+  const options = [
+    { label: "All", value: "all" },
+    ...coins.map((coin) => ({
+      label: coin.name,
+      value: coin.name,
+    })),
+  ];
+
+  const handleChange = (selectedOption) => {
+    setSelectedCrypto(selectedOption.value);
+  };
+
   return (
-    <select
-      value={selectedCrypto}
-      onChange={(e) => setSelectedCrypto(e.target.value)}
-      className="w-[200px] mb-10 px-4 py-2 border rounded-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-600 transition"
-    >
-      {coins.map((coin) => (
-        <option value={coin.name}>{coin.name}</option>
-      ))}
-    </select>
+    <div className="w-[250px] mb-10">
+      <Select
+        options={options}
+        onChange={handleChange}
+        value={options.find((opt) => opt.value === selectedCrypto)}
+        placeholder="Select a coin..."
+        isSearchable
+        styles={{
+          control: (base) => ({
+            ...base,
+            padding: "4px",
+            borderRadius: "4px",
+            borderColor: "#ccc",
+            boxShadow: "none",
+          }),
+        }}
+      />
+    </div>
   );
 };
 
-export default Select;
+export default CustomSelect;

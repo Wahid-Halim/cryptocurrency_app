@@ -1,9 +1,11 @@
-import React from 'react'
+import ExchangesList from "../components/ExchangesList";
 
 const Exchange = () => {
   return (
-    <div>Exchange</div>
-  )
-}
+    <section className="w-full h-full max-container pt-8 px-6">
+      <ExchangesList />
+    </section>
+  );
+};
 
-export default Exchange
+export default Exchange;

@@ -1,10 +1,19 @@
 import millify from "millify";
+import { useNavigate } from "react-router-dom";
 
 const CurrencyItem = ({ currency }) => {
-  const { rank, name, iconUrl, price, marketCap, change } = currency;
+  const navigate = useNavigate();
+
+  const { rank, name, iconUrl, price, marketCap, change, uuid } = currency;
+  const handleClickCurrency = () => {
+    navigate(`/crypto/${uuid}`);
+  };
 
   return (
-    <div className="flex flex-col p-3 bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3">
+    <div
+      className="flex flex-col p-3 bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3"
+      onClick={handleClickCurrency}
+    >
       <div className="flex justify-between items-center mb-5 border-b border-1 border-gray-100 pb-3">
         <span className="font-medium text-[18px]">
           {rank}. {name}

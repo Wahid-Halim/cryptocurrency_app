@@ -2,6 +2,7 @@ import { Home, CryptoCurrencies, Exchange, News } from "./pages/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import { Navigate } from "react-router-dom";
+import Crypto from "./pages/Crypto";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/cryptocurrencies" element={<CryptoCurrencies />} />
+          <Route path="/crypto/:id" element={<Crypto />} />
           <Route path="/exchange" element={<Exchange />} />
           <Route path="/news" element={<News />} />
         </Route>

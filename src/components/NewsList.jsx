@@ -1,15 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import { getCryptoNews } from "../services/cryptoNewsApi";
 import NewsItem from "./NewsItem";
 import Select from "./Select";
 import { useState } from "react";
+import useCryptoNews from "../hooks/useCryptoNews";
 
 const NewsList = ({ simplified }) => {
-  const { data, isPending } = useQuery({
-    queryFn: () => getCryptoNews(simplified),
-    queryKey: ["cryptoNews"],
-    staleTime: 1000 * 60,
-  });
+  const { data, isPending } = useCryptoNews(simplified);
 
   const [selectedCrypto, setSelectedCrypto] = useState("all");
 
@@ -39,8 +34,8 @@ const NewsList = ({ simplified }) => {
       )}
 
       <div className="grid grid-cols-3 gap-4">
-        {filteredNews.map((news) => (
-          <NewsItem news={news} key={news.id} />
+        {filteredNews.map((news, index) => (
+          <NewsItem news={news} key={index} />
         ))}
       </div>
     </div>

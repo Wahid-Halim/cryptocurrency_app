@@ -23,8 +23,8 @@ const CurrenciesList = ({ simplified }) => {
       {!simplified && <Search onSearch={(value) => setSearchTerm(value)} />}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredCurrencies?.map((currency) => (
-          <CurrencyItem currency={currency} key={currency.id} />
+        {filteredCurrencies?.map((currency, index) => (
+          <CurrencyItem currency={currency} key={index} />
         ))}
       </div>
     </div>
