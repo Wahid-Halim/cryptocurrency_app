@@ -11,7 +11,7 @@ const CurrencyItem = ({ currency }) => {
 
   return (
     <div
-      className="flex flex-col p-3 bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3"
+      className="flex flex-col p-3 bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3 cursor-pointer"
       onClick={handleClickCurrency}
     >
       <div className="flex justify-between items-center mb-5 border-b border-1 border-gray-100 pb-3">

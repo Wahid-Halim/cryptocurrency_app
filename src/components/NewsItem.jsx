@@ -9,7 +9,7 @@ const NewItem = ({ news }) => {
 
   return (
     <div
-      className="flex flex-col justify-between  bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3 p-3"
+      className="flex flex-col justify-between  bg-slate-50 shadow-md transition hover:shadow-2xl space-y-3 p-3 cursor-pointer"
       onClick={handleClickNewsCard}
     >
       <div className="flex justify-between items-center mb-4 gap-4">

@@ -1,4 +1,4 @@
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { VscChromeClose } from "react-icons/vsc";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -11,26 +11,34 @@ import { useState } from "react";
 
 const AppNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleOpenNav = () => {
     setIsOpen((open) => !open);
   };
+
+  const handleClickLogo = () => {
+    navigate("/home");
+  };
   return (
-    <aside className="w-[300px] h-[100vh] bg-violet-700 pt-4 px-6 text-white max-laptop1:px-2 max-laptop1:w-[200px] max-mobileLg:w-full max-mobileLg:h-fit ">
-      <div className="flex justify-between items-center mb-5">
-        <h1 className="flex items-center   text-center text-2xl font-semibold gap-x-2 justify-center font-roboto tracking-wider">
-          <PiCurrencyEth className="text-4xl" />
+    <aside className="w-[300px] h-[100vh] bg-violet-700 pt-4 px-6 text-white max-laptop1:px-2 max-laptop1:w-[200px] max-mobileLg:w-full max-mobileLg:h-fit max-mobileLg:p-2 ">
+      <div className="flex justify-between items-center ">
+        <h1
+          className="flex items-center   text-center text-2xl font-semibold gap-x-2 justify-center font-roboto tracking-wider"
+          onClick={handleClickLogo}
+        >
+          <PiCurrencyEth className="text-4xl font-roboto" />
           CoinNest
         </h1>
         <span onClick={handleOpenNav}>
-          {isOpen ? (
+          {!isOpen ? (
             <RxHamburgerMenu className="mobileLg:hidden text-2xl " />
           ) : (
             <VscChromeClose className="mobileLg:hidden text-2xl " />
           )}
         </span>
       </div>
-      <nav className={`${!isOpen ? "max-mobileLg:hidden" : ""}`}>
+      <nav className={`${!isOpen ? "max-mobileLg:hidden" : ""} mt-5`}>
         <ul className="space-y-6">
           <li className="">
             <NavLink
