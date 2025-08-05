@@ -19,11 +19,15 @@ CoinNest is a responsive and interactive cryptocurrency dashboard built using **
 
 [Click here to view the live demo]()
 
-<!-- Replace # with your deployed app link -->
-
 ## 🛠 Tech Stack
 
 - React
 - React Router DOM
 - Tailwind CSS
 - React Icons
+
+## 👨‍💻 Author
+
+**Wahidallah Halim**
+
+[LinkedIn](www.linkedin.com/in/wahid-halim)
