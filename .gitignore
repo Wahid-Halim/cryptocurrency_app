@@ -12,7 +12,6 @@ dist
 dist-ssr
 nike_shoes
 *.local
-.evn
 
 # Editor directories and files
 .vscode/*

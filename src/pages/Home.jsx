@@ -8,7 +8,7 @@ const Home = () => {
     <div className="page-container max-container max-md:px-2 max-md:py-4">
       <GlobalStats />
       <SubHeader
-        to="/cryptocurrencie"
+        to="/cryptocurrencies"
         headerText="Top 10 Cryptos in The World"
       />
       <TopCurrencies />

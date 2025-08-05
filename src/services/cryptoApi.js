@@ -1,11 +1,10 @@
 const BASE_URL = "https://coinranking1.p.rapidapi.com";
 
-const cryptoKey = import.meta.env.VITE_API_KEY_CRYPTO;
-
 const options = {
   method: "GET",
   headers: {
     "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+    // come on man don't use i didn't time have to add to .env file
     "x-rapidapi-key": "17ccf53491msh82bc9a67de2dd50p1af898jsn9580e8d478c8",
   },
 };
