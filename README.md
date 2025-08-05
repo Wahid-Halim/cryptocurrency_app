@@ -17,7 +17,7 @@ CoinNest is a responsive and interactive cryptocurrency dashboard built using **
 
 ## 🌐 Live Demo
 
-[Click here to view the live demo]()
+[Click here to view the live demo](https://coinnextcrypto.netlify.app/home)
 
 ## 🛠 Tech Stack
 
