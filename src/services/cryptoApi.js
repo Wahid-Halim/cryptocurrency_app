@@ -1,10 +1,12 @@
 const BASE_URL = "https://coinranking1.p.rapidapi.com";
 
+const cryptoKey = import.meta.env.VITE_API_KEY_CRYPTO;
+
 const options = {
   method: "GET",
   headers: {
-    "x-rapidapi-key": "17ccf53491msh82bc9a67de2dd50p1af898jsn9580e8d478c8",
     "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+    "x-rapidapi-key": "17ccf53491msh82bc9a67de2dd50p1af898jsn9580e8d478c8",
   },
 };
 
@@ -35,14 +37,12 @@ export const getCryptoHistory = async (id, timePeriod = "7d") => {
   return data;
 };
 
-
-
 export const getExchanges = async () => {
   const res = await fetch(`${BASE_URL}/exchanges`, options);
 
   if (!res.ok) throw new Error("Failed to fetch exchanges");
 
   const data = await res.json();
-  console.log(data,'from api')
+  console.log(data, "from api");
   return data;
 };
