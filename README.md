@@ -13,7 +13,7 @@ CoinNest is a responsive and interactive cryptocurrency dashboard built using **
 
 ## 📸 Screenshots
 
-![Homepage Screenshot](./screenshots/homepage.png)
+![Homepage Screenshot](./src/screenshots/Screenshot%202025-08-05%20110936.png)
 
 ## 🌐 Live Demo
 
